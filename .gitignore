@@ -1,0 +1,17 @@
+# secrets & local config
+.env
+.env.*
+!.env.example
+
+# dependencies & build output
+node_modules/
+web/dist/
+
+# user data: projects, rendered videos, image library, settings (contains keys)
+workspace/
+_old_backup/
+
+# misc
+*.log
+.DS_Store
+Thumbs.db

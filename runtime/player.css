@@ -1,0 +1,35 @@
+[hidden] { display: none !important; }
+html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+#viewport { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+#stage { position: relative; width: 1920px; height: 1080px; flex: none; overflow: hidden; transform-origin: center center; background: var(--bg); }
+#ambient, #scenes, #overlay, .scene-host { position: absolute; inset: 0; }
+#overlay { pointer-events: none; z-index: 10; }
+
+/* ambient backgrounds */
+#ambient { background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%); overflow: hidden; }
+#ambient .blob { position: absolute; width: 1400px; height: 1400px; border-radius: 50%; opacity: .5; will-change: transform; }
+#ambient .grain { position: absolute; inset: -60px; opacity: .07; mix-blend-mode: overlay; }
+#ambient .vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,.55) 100%); }
+#ambient .pattern { position: absolute; inset: -200px; }
+
+/* captions */
+#captions { position: absolute; left: 50%; bottom: 58px; transform: translateX(-50%); max-width: 1500px; text-align: center; font-family: var(--font-body); font-weight: 700; font-size: 46px; line-height: 1.3; padding: 14px 34px; border-radius: 18px; background: color-mix(in srgb, var(--bg) 78%, transparent); color: var(--text); opacity: 0; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+#captions .cw { opacity: .92; }
+#captions .cw.on { color: var(--accent); opacity: 1; }
+#watermark { position: absolute; top: 40px; right: 56px; font-family: var(--font-display); font-weight: 700; font-size: 26px; letter-spacing: .08em; color: var(--text); opacity: .45; text-transform: uppercase; }
+
+/* preview controls */
+#controls { position: fixed; left: 0; right: 0; bottom: 0; height: 52px; display: flex; align-items: center; gap: 14px; padding: 0 16px; background: linear-gradient(transparent, rgba(0,0,0,.8)); color: #fff; font: 500 13px/1 system-ui, sans-serif; z-index: 50; transition: opacity .25s; }
+body.idle #controls { opacity: 0; }
+#controls button { background: none; border: 0; color: #fff; width: 34px; height: 34px; padding: 6px; cursor: pointer; border-radius: 8px; }
+#controls button:hover { background: rgba(255,255,255,.15); }
+#controls svg { width: 100%; height: 100%; }
+#time { font-variant-numeric: tabular-nums; min-width: 96px; }
+#sceneLabel { opacity: .7; max-width: 30%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#scrub { position: relative; flex: 1; height: 6px; background: rgba(255,255,255,.25); border-radius: 6px; cursor: pointer; }
+#scrub:hover { height: 8px; }
+#scrubFill { position: absolute; left: 0; top: 0; bottom: 0; background: #6d8cff; border-radius: 6px; }
+#scrubKnob { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: #fff; }
+#scrubMarks .mk { position: absolute; top: -3px; bottom: -3px; width: 3px; background: rgba(255,255,255,.7); border-radius: 2px; }
+#errorToast { position: fixed; top: 10px; left: 10px; right: 10px; padding: 10px 14px; background: rgba(180,30,40,.92); color: #fff; font: 12px/1.4 ui-monospace, monospace; border-radius: 8px; z-index: 60; white-space: pre-wrap; max-height: 40vh; overflow: auto; }
+.scene-error { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 600 34px system-ui; color: #ff8a8a; background: rgba(40,0,0,.35); padding: 80px; text-align: center; }

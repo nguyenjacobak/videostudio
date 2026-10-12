@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player</title>
+<link rel="stylesheet" href="/vendor/fonts/be-vietnam-pro/400.css">
+<link rel="stylesheet" href="/vendor/fonts/be-vietnam-pro/600.css">
+<link rel="stylesheet" href="/vendor/fonts/be-vietnam-pro/800.css">
+<link rel="stylesheet" href="/vendor/fonts/inter/wght.css">
+<link rel="stylesheet" href="/vendor/fonts/montserrat/wght.css">
+<link rel="stylesheet" href="/vendor/fonts/playfair-display/wght.css">
+<link rel="stylesheet" href="/vendor/fonts/playfair-display/wght-italic.css">
+<link rel="stylesheet" href="/vendor/fonts/lora/wght.css">
+<link rel="stylesheet" href="/vendor/fonts/oswald/wght.css">
+<link rel="stylesheet" href="/vendor/fonts/jetbrains-mono/wght.css">
+<link rel="stylesheet" href="/vendor/fonts/patrick-hand/400.css">
+<link rel="stylesheet" href="/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="/runtime/player.css">
+<script src="/vendor/gsap/gsap.min.js"></script>
+<script src="/vendor/gsap/DrawSVGPlugin.min.js"></script>
+<script src="/vendor/gsap/MorphSVGPlugin.min.js"></script>
+<script src="/vendor/gsap/MotionPathPlugin.min.js"></script>
+<script src="/vendor/gsap/SplitText.min.js"></script>
+<script src="/vendor/gsap/TextPlugin.min.js"></script>
+<script src="/vendor/gsap/ScrambleTextPlugin.min.js"></script>
+<script src="/vendor/gsap/CustomEase.min.js"></script>
+<script src="/vendor/d3/d3.min.js"></script>
+<script src="/vendor/topojson/topojson-client.min.js"></script>
+<script src="/vendor/rough/rough.js"></script>
+<script src="/vendor/lucide/lucide.min.js"></script>
+<script src="/vendor/katex/katex.min.js"></script>
+</head>
+<body>
+<div id="viewport">
+  <div id="stage">
+    <div id="ambient"></div>
+    <div id="scenes"></div>
+    <div id="overlay">
+      <div id="watermark"></div>
+      <div id="captions"></div>
+    </div>
+  </div>
+</div>
+<div id="controls" hidden>
+  <button id="btnPlay" title="Phát / Dừng (Space)">
+    <svg id="icoPlay" viewBox="0 0 24 24"><path d="M7 4v16l13-8z" fill="currentColor"/></svg>
+    <svg id="icoPause" viewBox="0 0 24 24" hidden><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>
+  </button>
+  <span id="time">0:00 / 0:00</span>
+  <div id="scrub"><div id="scrubMarks"></div><div id="scrubFill"></div><div id="scrubKnob"></div></div>
+  <span id="sceneLabel"></span>
+  <button id="btnFull" title="Toàn màn hình (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>
+</div>
+<div id="errorToast" hidden></div>
+<audio id="audio" preload="auto"></audio>
+<script src="/runtime/kit.js"></script>
+<script src="/runtime/gfx.js"></script>
+<script src="/runtime/gfx-lib-1.js"></script>
+<script src="/runtime/gfx-lib-2.js"></script>
+<script src="/runtime/gfx-lib-3.js"></script>
+<script src="/runtime/gfx-lib-4.js"></script>
+<script src="/runtime/gfx-diagrams.js"></script>
+<script src="/runtime/gfx-diagrams-2.js"></script>
+<script src="/runtime/gfx-recipes.js"></script>
+<script src="/runtime/cartoon.js"></script>
+<script src="/runtime/world-kit.js"></script>
+<script src="/runtime/env-kit.js"></script>
+<script src="/runtime/envs-urban.js"></script>
+<script src="/runtime/envs-nature.js"></script>
+<script src="/runtime/mg.js"></script>
+<script src="/runtime/runtime.js"></script>
+</body>
+</html>

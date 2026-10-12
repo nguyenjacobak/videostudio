@@ -1,0 +1,83 @@
+/* Injected into every scene's shadow root. Tokens (--bg, --primary, ...) are set on :host by the runtime. */
+:host { all: initial; }
+*, *::before, *::after { box-sizing: border-box; }
+.stage {
+  position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+  color: var(--text); font-family: var(--font-body); font-size: 40px; line-height: 1.35;
+  -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;
+}
+.stage svg { overflow: visible; }
+.stage .k-chart, .stage .k-map { overflow: hidden; display: block; }
+img, svg { display: block; }
+
+/* layout */
+.k-full { position: absolute; inset: 0; }
+.k-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: var(--safe); gap: 32px; }
+.k-row { display: flex; align-items: center; gap: 48px; }
+.k-col { display: flex; flex-direction: column; gap: 24px; }
+.k-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.k-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; }
+.k-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; }
+.k-split { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; padding: var(--safe); }
+
+/* type */
+.k-kicker { font-family: var(--font-body); font-size: 30px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+.k-title { font-family: var(--font-display); font-size: 104px; font-weight: 800; line-height: 1.04; letter-spacing: -.02em; color: var(--text); }
+.k-h1 { font-family: var(--font-display); font-size: 84px; font-weight: 800; line-height: 1.08; letter-spacing: -.015em; }
+.k-h2 { font-family: var(--font-display); font-size: 62px; font-weight: 700; line-height: 1.12; }
+.k-h3 { font-family: var(--font-display); font-size: 46px; font-weight: 700; line-height: 1.18; }
+.k-body { font-size: 40px; line-height: 1.4; color: var(--text); }
+.k-small { font-size: 30px; color: var(--muted); }
+.k-mono { font-family: var(--font-mono); }
+.k-muted { color: var(--muted); }
+.k-primary { color: var(--primary); }
+.k-accent { color: var(--accent); }
+.k-accent2 { color: var(--accent2); }
+.k-danger { color: var(--danger); }
+.k-mark { padding: 0 .12em; border-radius: 6px; }
+.k-stat { font-family: var(--font-display); font-size: 180px; font-weight: 800; line-height: .95; letter-spacing: -.03em; color: var(--primary); font-variant-numeric: tabular-nums; }
+.k-quote { font-family: var(--font-display); font-size: 64px; font-style: italic; line-height: 1.25; }
+.k-source { position: absolute; left: var(--safe); top: 44px; font-size: 22px; color: var(--muted); opacity: .8; }
+
+/* surfaces */
+.k-card { background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius); padding: 44px 48px; box-shadow: 0 30px 80px rgba(0,0,0,.28); }
+.k-card.alt { background: var(--surface2); }
+.k-chip { display: inline-flex; align-items: center; gap: 14px; padding: 12px 28px; border-radius: 999px; background: var(--surface2); border: 2px solid var(--line); font-size: 30px; font-weight: 600; }
+.k-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 76px; height: 76px; padding: 0 20px; border-radius: 999px; background: var(--primary); color: var(--bg); font-family: var(--font-display); font-weight: 800; font-size: 38px; }
+.k-icon { display: inline-flex; align-items: center; justify-content: center; color: var(--primary); }
+.k-icon-circle { display: inline-flex; align-items: center; justify-content: center; width: 150px; height: 150px; border-radius: 50%; background: color-mix(in srgb, var(--primary) 18%, transparent); color: var(--primary); border: 3px solid color-mix(in srgb, var(--primary) 45%, transparent); }
+.k-divider { height: 4px; width: 160px; border-radius: 4px; background: var(--accent); }
+.k-glow { filter: drop-shadow(0 0 18px color-mix(in srgb, var(--primary) 70%, transparent)); }
+.k-asset { position: absolute; }
+.k-asset > svg { width: 100%; height: 100%; }
+
+/* timeline component */
+.k-timeline { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding-top: 60px; }
+.k-tl-line { position: absolute; left: 0; right: 0; top: 84px; height: 6px; border-radius: 6px; background: var(--line); }
+.k-tl-item { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; padding: 0 12px; }
+.k-tl-dot { width: 54px; height: 54px; border-radius: 50%; background: var(--bg); border: 8px solid var(--primary); }
+.k-tl-label { font-family: var(--font-display); font-size: 48px; font-weight: 800; color: var(--primary); }
+.k-tl-text { font-size: 30px; color: var(--text); max-width: 340px; line-height: 1.3; }
+
+.k-w, .k-c { display: inline-block; }
+.katex { font-size: 1.25em; }
+
+/* library illustrations */
+.k-illus { display: inline-block; width: 160px; height: 160px; flex: none; filter: drop-shadow(0 14px 18px rgba(0,0,0,.18)); }
+.k-illus > svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.k-illus.no-shadow { filter: none; }
+.k-flag { border-radius: 50%; }
+.k-ground { position: absolute; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(0,0,0,.16), transparent 70%); }
+.k-label { font-family: var(--font-display); font-weight: 800; font-size: 52px; line-height: 1.1; color: var(--text); white-space: nowrap; }
+
+/* cartoon screens inside settings: dark boards get light text */
+.k-screen { color: var(--text); font-family: var(--font-display); text-align: center; }
+.k-screen-chalkboard, .k-screen-monitor, .k-screen-tv { --text: #f7f5ee; --muted: #cfe0d8; --line: rgba(255,255,255,.22); color: #f7f5ee; }
+.k-screen-chalkboard { font-family: 'Patrick Hand', var(--font-display); }
+.k-screen .k-chart text { fill: currentColor; }
+
+/* graphics on dark backdrops (space, blueprint, chalkboard, night) */
+.k-gfx.dark text[fill="#2b2f3a"] { fill: #f2f4f8; }
+.k-gfx.dark [stroke="#2b2f3a"] { stroke: #e6e9f0; }
+.k-gfx.dark .gfx-label > g > rect:first-child { fill: #e6e9f0; }
+.k-gfx.dark .gfx-label > g > rect:nth-child(2)[fill="#2b2f3a"] { fill: #3b4460; }
